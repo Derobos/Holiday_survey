@@ -5,15 +5,27 @@
 
     <style>
         body {
-            background-color: rgb(157, 139, 173);
-            font: fantasy;
-            align-content: center;
+            font-family: sans-serif;
+            padding-left: 20%;
+            padding-right: 20%;
         }
         
-        #title {
-            border-width: 1;
-            border: solid;
-            text-align: center
+        form {
+            background-color: navajowhite;
+        }
+        
+        input {
+            display: inline-block;
+        }
+        
+        div {
+            display: flex;
+        }
+        
+        label {
+            font-size: 20px;
+            display: block;
+            padding-bottom: 10px;
         }
     </style>
 
@@ -21,7 +33,7 @@
 
 <body>
     <h1 id="title">Holiday Survey</h1>
-    <p id="description">This is a survey where you can tell us about your favorite (or least favorite) Holidays.
+    <p id="description">This is a survey where you can tell us about your favorite Holiday.
 
     </p>
     <form id="survey-form">
@@ -31,54 +43,77 @@
             <label id="email-label">Email:</label>
             <input type="email" id="email" placeholder="Your@Email.xxx" required></input><br>
             <label id="number-label">Age:</label>
-            <input type="number" id="number" min="1" max="3" placeholder="101" required></input><br>
+            <input type="number" id="number" min="1" max="150" placeholder="101" required></input><br>
             <label id="dropdown">Gender</label>
             <select name="gender" id="dropdown">
             <option value="">--Gender--</option>
-            <option value="Little Boy">Little Boy</option>
-            <option value="Baby Girl">Baby Girl</option>
-            <option value="Big Daddy">Big Daddy</option>
-            <option value="Wonder Woman">Wonder Woman</option>
-            <option value="Superior Specimen">Superior Specimen</option>
-            <option value="Rather not say">Rather not say</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+            <option value="O">Other</option>
+            
         </select>
         </fieldset>
-        <fieldset>
-            <legend>What is Your Favorite Holiday?</legend>
-            <input type="radio" name="favorite_Holiday" value="Halloween">Halloween<br>
-            <input type="radio" name="favorite_Holiday" value="April Fools Day">April Fools Day<br>
-            <input type="radio" name="favorite_Holiday" value="Thanksgiving">Thanksgiving<br>
+        <fieldset id="Holidays">
+            <legend>What is your favorite holiday?</legend>
+            <input type="radio" name="favorite_Holiday" value="New Year's Day">New Year's Day
+            <input type="radio" name="favorite_Holiday" value="Martin Luther King. Jr. Day">Martin Luther King, Jr. Day
+            <input type="radio" name="favorite_Holiday" value="George Washington's Birthday">George Washington's Birthday
+            <input type="radio" name="favorite_Holiday" value="Independence Day">Independence Day
+            <input type="radio" name="favorite_Holiday" value="Labor Day">Labor Day
+            <input type="radio" name="favorite_Holiday" value="Columbus Day">Columbus Day
+            <input type="radio" name="favorite_Holiday" value="Veterans Day">Veterans Day
+            <input type="radio" name="favorite_Holiday" value="Thanksgiving Day">Thanksgiving Day
+            <input type="radio" name="favorite_Holiday" value="Christmas Day">Christmas Day
+
             <br>
         </fieldset>
 
         <fieldset>
-            <legend>What is Your Least Favorite Holiday?</legend>
-            <input type="radio" name="Least_favorite_Holiday" value="Mother's Day">Mother's Day<br>
-            <input type="radio" name="Least_favorite_Holiday" value="Father's Day">Father's Day<br>
-            <input type="radio" name="Least_favorite_Holiday" value="Christmas">Christmas<br>
-            <br>
-
+            <legend>When do you start planning for your favorite Holiday</legend>
+            <div>
+                <input type="radio" id="S" name="Time" value="1" checked>
+                <label Id="1 Day">The day before</label>
+            </div>
+            <div>
+                <input type="radio" id="W" name="Time" value="7">
+                <label id="1 week">The week before</label>
+            </div>
+            <div>
+                <input type="radio" id="M" name="Time" value="30">
+                <label id="1 Month">About a month before</label>
+            </div>
+            <div>
+                <input type="radio" id="Y" name="Time" value="365">
+                <label id="1 Year">Up to a year</label>
+            </div>
         </fieldset>
 
         <fieldset>
-            <legend>I celebrate my favorite holiday by...</legend>
-            <div>
-                <input type="checkbox" id="Jiggy" name="interest" value="Jiggy" checked>
-                <label for="coding">Getting Jiggy with it!</label>
-            </div>
-            <div>
-                <input type="checkbox" id="Narfling" name="interest" value="Narfling">
-                <label for="music">Narfling the Garthok!</label>
-            </div>
-            <div>
-                <input type="checkbox" id="Bruh" name="interest" value="Bruh!" checked>
-                <label for="coding">Sleep in Bruh!</label>
-            </div>
+            <legend>What do you enjoy during your favorite holiday?</legend>
+            <input type="checkbox" name="Attend party" value="AParty">Attend a party
+            <input type="checkbox" name="Shop" value="Shopping">Go shopping
+            <input type="checkbox" name="Throw party" value="TParty">Throw a party
+            <input type="checkbox" name="Family" value="Family">Spend time with family
+            <input type="checkbox" name="Alone" value="Alone">Spend time Alone
+            <textarea placeholder="Please comment here for other activities"></textarea>
+            <br>
         </fieldset>
+        <fieldset>
+            <label id="dropdown">How much do you generally spend on your favorite holiday?</label>
+            <select name="value" id="dropdown">
+            <option value="">$0</option>
+            <option value="100">$100</option>
+            <option value="200">$200</option>
+            <option value="300">$300</option>
+            <option value="400">$400</option>
+            <option value="more">More</option>
+        </fieldset>
+
+
         <br>
 
         <br>
-        <textarea placeholder="Comment at your own risk."></textarea>
+        
 
         <input id="submit" type="submit">
     </form>
